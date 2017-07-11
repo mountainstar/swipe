@@ -26,15 +26,29 @@ class App extends React.Component {
         image={{ uri: item.uri }}
       >
       <Text style={{ marginBottom: 10 }} >
-        Frank and Beans
+        Frank
       </Text>
       <Button
         icon={{ name: 'code' }}
         backgroundColor='#03a9f4'
         title='View Now!'
-        
+
       />
 
+      </Card>
+    );
+  }
+
+  renderNoMoreCards() {
+    return (
+      <Card title="All Done!">
+        <Text style={{ marginBottom: 10 }}>
+          There's no more content here!
+        </Text>
+        <Button
+          backgroundColor="#03a9f4"
+          title="Get more!"
+        />
       </Card>
     );
   }
@@ -44,6 +58,7 @@ class App extends React.Component {
         <Deck
             data={DATA}
             renderCard={this.renderCard}
+            renderNoMoreCards={this.renderNoMoreCards}
         />
       </View>
     );
